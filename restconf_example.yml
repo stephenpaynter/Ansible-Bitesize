@@ -1,0 +1,27 @@
+---
+  - name: Restconf Example
+    hosts: R8
+    gather_facts: no
+    
+ 
+
+    tasks:
+
+
+    - name: Gather CSR Restconf Capabilities
+      uri:
+        url: https://192.168.1.202/restconf/data/netconf-state/capabilities
+        user: cisco
+        password: cisco
+        force_basic_auth: yes
+        validate_certs: no
+        return_content: yes
+        method: GET
+        body_format: json
+        body: json
+      register: caps
+      no_log: true
+
+
+    - debug:
+        msg: "{{ caps.content.split('\n') }}"

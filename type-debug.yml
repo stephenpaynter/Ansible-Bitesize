@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  vars:
+    var1: "Hello World"
+    var2: false
+    var3: 12345
+    var4: [1, 2, 3]
+    var5:
+      name: 1
+
+      
+
+  tasks:
+
+  - debug:
+      msg: 
+        - "var1 is a {{ var1 | type_debug }}"
+        - "var2 is a {{ var2 | type_debug }}"
+        - "var3 is a {{ var3 | type_debug }}"
+        - "var4 is a {{ var4 | type_debug }}"
+        - "var5 is a {{ var5 | type_debug }}"
+

@@ -1,0 +1,19 @@
+---
+- name: asa test
+  hosts: 
+    - localhost
+  gather_facts: no
+  
+ 
+  tasks:
+
+  - name: Debug Hello
+    debug:
+      msg: "Hello"
+    tags: hello
+    
+
+  - name: Debug Goodbye
+    debug:
+      msg: "Goodbye"
+    tags: goodbye
